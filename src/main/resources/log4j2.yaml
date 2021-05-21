@@ -1,0 +1,33 @@
+Configuration:
+  name: log-config
+  properties:
+    property:
+      name: log-level
+      # El nivel de log se configura por variable de ambiente
+      #value: ${env:LOG_LEVEL}
+      value: INFO
+
+  Appenders:
+    Console:
+      name: Console_Appender
+      target: SYSTEM_OUT
+      PatternLayout:
+        # Layout de GNP
+        pattern: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%t] %c{1.} - %msg%n"
+
+  Loggers:
+      Root:
+        level: ${log-level}
+        AppenderRef:
+          ref: Console_Appender
+
+      Logger:
+        - name: mx.com.seting.service.notifier
+          level: ${log-level}
+          AppenderRef:
+            ref: Console_Appender
+      Logger:
+        - name: org.springframework
+          level: ${log-level}
+          AppenderRef:
+            ref: Console_Appender
