@@ -4,7 +4,6 @@ import com.example.seting.demo.model.Person;
 import com.example.seting.demo.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.theme.CookieThemeResolver;
 
 import java.util.List;
 import java.util.UUID;
